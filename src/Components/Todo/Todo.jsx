@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Todo({ todo }) {
+export default function Todo({ todo, removeTodo }) {
     return (
         <section className="todo">
             <div className="content">
@@ -11,7 +11,7 @@ export default function Todo({ todo }) {
             </div>
             <div>
                 <button className="complete">Completar</button>
-                <button className="remove">X</button>
+                <button className="remove" onClick={()=> removeTodo(todo.id)}>X</button>
             </div>
         </section>
     )
