@@ -1,4 +1,4 @@
-export default function Filter({filter, setFilter}) {
+export default function Filter({filter, setFilter, setSort}) {
     return (
         <section className="filter">
             <h2>Filtrar:</h2>
@@ -13,8 +13,8 @@ export default function Filter({filter, setFilter}) {
                 </div>
                 <div>
                     <p>Ordem Alfabética:</p>
-                    <button>Asc</button>
-                    <button>Desc</button>
+                    <button onClick={()=> setSort("Asc")}>Asc</button>
+                    <button onClick={()=> setSort("Desc")}>Desc</button>
                 </div>
             </div>
         </section>
