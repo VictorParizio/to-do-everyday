@@ -3,6 +3,7 @@ import './App.css'
 import Todo from './Components/Todo/Todo'
 import TodoForm from './Components/TodoForm/TodoForm'
 import Search from './Components/Search/Search'
+import Filter from './Components/Filter/Filter'
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -64,6 +65,8 @@ export default function App() {
       <h1>Lista de Tarefas</h1>
       <TodoForm addTodo={addTodo} />
       <Search search={search} setSearch={setSearch} />
+      <Filter />
+
       <div className="todo-list">
         {todos
           .filter((todo) =>
