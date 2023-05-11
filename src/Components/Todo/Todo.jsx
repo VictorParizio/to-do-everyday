@@ -10,8 +10,8 @@ export default function Todo({ todo }) {
                 </p>
             </div>
             <div>
-                <button>Completar</button>
-                <button>X</button>
+                <button className="complete">Completar</button>
+                <button className="remove">X</button>
             </div>
         </section>
     )
