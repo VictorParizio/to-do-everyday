@@ -1,12 +1,37 @@
-import React from 'react'
-import TodoList from './Components/TodoList/TodoList'
+import React, { useState } from 'react'
+import Todo from './Components/Todo/Todo'
 import './App.css'
 
 export default function App() {
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      text: "Criar funcionalidade x no sistema",
+      category: "Trabalho",
+      isCompleted: false,
+    },
+    {
+      id: 2,
+      text: "Ir para a academia",
+      category: "Pessoal",
+      isCompleted: false,
+    },
+    {
+      id: 3,
+      text: "Estudar React",
+      category: "Estudos",
+      isCompleted: false,
+    },
+  ])
+
   return (
     <div className='app'>
       <h1>Lista de Tarefas</h1>
-      <TodoList />
+      <section className="todo-list">
+        {todos.map((todo) => (
+          <Todo todo={todo} />
+        ))}
+      </section>
     </div>
   )
 }
