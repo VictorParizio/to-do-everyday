@@ -39,6 +39,14 @@ export default function App() {
     setTodos(newTodos)
   }
 
+  const completeTodo = (id) => {
+    const newTodos = [...todos]
+    newTodos.map((todo) =>
+      todo.id === id ? (todo.isCompleted = !todo.isCompleted) : todo
+    )
+    setTodos(newTodos)
+  }
+
   const removeTodo = (id) => {
     const newTodos = [...todos]
     const filteredTodos = newTodos.filter(
@@ -54,7 +62,11 @@ export default function App() {
       <TodoForm addTodo={addTodo} />
       <div className="todo-list">
         {todos.map((todo) => (
-          <Todo key={todo.id} todo={todo} removeTodo={removeTodo} />
+          <Todo
+            key={todo.id}
+            todo={todo}
+            completeTodo={completeTodo}
+            removeTodo={removeTodo} />
         ))}
       </div>
     </section>
