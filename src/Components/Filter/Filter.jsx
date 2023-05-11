@@ -1,11 +1,11 @@
-export default function Filter() {
+export default function Filter({filter, setFilter}) {
     return (
-        <div className="filter">
+        <section className="filter">
             <h2>Filtrar:</h2>
             <div className="filter-options">
                 <div>
                     <p>Status:</p>
-                    <select>
+                    <select value={filter} onChange={(e) => setFilter(e.target.value)}>
                         <option value="All">Todas</option>
                         <option value="Completed">Completas</option>
                         <option value="Inconplete">Incompletas</option>
@@ -17,6 +17,6 @@ export default function Filter() {
                     <button>Desc</button>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
