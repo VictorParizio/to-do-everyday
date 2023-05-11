@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Todo({ todo }) {
     return (
-        <div className="todo">
+        <section className="todo">
             <div className="content">
                 <p>{todo.text}</p>
                 <p className="category">
@@ -13,6 +13,6 @@ export default function Todo({ todo }) {
                 <button>Completar</button>
                 <button>X</button>
             </div>
-        </div>
+        </section>
     )
 }
